@@ -1,7 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react'
-import Greet from './components/Greet.js'
-import Welcome from './components/Welcome.js'
-import Hello from './components/Hello.js'
 import TodoList from './components/TodoList.js'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -44,13 +41,14 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Greet /> */}
-      {/* <Welcome /> */}
-      {/* <Hello /> */}
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodos}>clear completed</button>
+      <button className="btn" onClick={handleAddTodo}>
+        Add Todo
+      </button>
+      <button className="btn" onClick={handleClearTodos}>
+        clear completed
+      </button>
       <div>{todos.filter((todo) => !todo.complete).length} left to do</div>
     </div>
   )
