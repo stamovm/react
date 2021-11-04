@@ -19,6 +19,7 @@ body {
 
 .App {
   display: flex;
+  width: 20rem;
   background-color: #282c34;
   flex-direction: column;
   /* text-align: center; */
