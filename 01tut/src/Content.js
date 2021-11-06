@@ -1,9 +1,8 @@
 import ItemList from './ItemList'
 
-const Content = ({ items, name, handleName, handleCheck, handleDelete }) => {
+const Content = ({ items, handleCheck, handleDelete }) => {
   return (
     <main>
-      <p onDoubleClick={handleName}>Hello {name}</p>
       {items.length ? (
         <ItemList
           items={items}
