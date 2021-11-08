@@ -1,4 +1,6 @@
-const TypeBox = ({ typedColor, setTypedColor }) => {
+import colorNames from 'colornames'
+
+const TypeBox = ({ setTypedColor, setHexValue, isDarkText, setIsDarkText }) => {
   return (
     <div>
       <form
@@ -9,8 +11,16 @@ const TypeBox = ({ typedColor, setTypedColor }) => {
         <input
           type="text"
           placeholder="Add color name"
-          onChange={(e) => setTypedColor(e.target.value)}
+          autoFocus
+          required
+          onChange={(e) => {
+            setTypedColor(e.target.value)
+            setHexValue(colorNames(e.target.value))
+          }}
         />
+        <button type="button" onClick={() => setIsDarkText(!isDarkText)}>
+          Toggle Text Color
+        </button>
       </form>
     </div>
   )

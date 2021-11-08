@@ -14,16 +14,16 @@ code {
 }
 
 .App {
-  /* text-align: center; */
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .displayBox {
-  margin-top: 10rem;
   margin-bottom: 1rem;
+  margin-top: 3rem;
   width: 20rem;
   height: 20rem;
   font-size: 1.8rem;
@@ -37,17 +37,31 @@ code {
 
 .typeBox {
   width: 20rem;
-  height: 2.8rem;
-  border-radius: 0.5rem;
-  border: 2px solid black;
   display: flex;
   padding: 0px;
-  box-shadow: 2px 2px 8px 3px #888888;
+  flex-direction: column;
 }
 .typeBox input {
-  flex: 1;
+  /* flex: 1; */
+  /* width: 100%; */
   font-size: 1.5rem;
   padding: 5px;
-  /* border: 0; */
+  border-radius: 0.5rem;
   background-color: #eee;
+  border: 2px solid black;
+  box-shadow: 2px 2px 8px 3px #888888;
+}
+
+button {
+  margin-top: 1rem;
+  min-height: 2.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 8px 3px #888888;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #aaa;
+  color: white;
 }
