@@ -13,8 +13,10 @@ code {
 }
 
 .buttons {
+  margin-top: 0;
   width: 100%;
   display: flex;
+  position: fixed;
 }
 
 .btn {
@@ -25,4 +27,13 @@ code {
 .btn:hover {
   background-color: black;
   color: white;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.tables {
+  margin-top: 2rem;
 }

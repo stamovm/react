@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+import MyButton from './MyButton'
+import ListItem from './ListItem'
+
 const sections = ['users', 'posts', 'comments']
 const API_URL = 'https://jsonplaceholder.typicode.com/'
 function App() {
@@ -10,9 +13,8 @@ function App() {
   }
 
   useEffect(() => {
-    console.log('Loading: 1')
     getItems(activeSection)
-  }, [])
+  }, [activeSection])
 
   function getItems(section) {
     fetch(API_URL + section)
@@ -21,46 +23,26 @@ function App() {
         setItems(json)
       })
   }
-  function btnClick(txt) {
-    getItems(txt)
-    setActiveSection(txt)
-  }
 
   return (
     <div className="App">
       <section className="buttons">
-        <button
-          type="button"
-          className="btn"
-          onClick={() => btnClick(sections[0])}
-          style={activeSection === sections[0] ? activeStyle : {}}
-        >
-          {sections[0]}
-        </button>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => btnClick(sections[1])}
-          style={activeSection === sections[1] ? activeStyle : {}}
-        >
-          {sections[1]}
-        </button>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => btnClick(sections[2])}
-          style={activeSection === sections[2] ? activeStyle : {}}
-        >
-          {sections[2]}
-        </button>
-      </section>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id} className="li-item">
-            {JSON.stringify(item)}
-          </li>
+        {sections.map((section, index) => (
+          <MyButton
+            key={index}
+            setActiveSection={setActiveSection}
+            style={activeSection === sections[index] ? activeStyle : {}}
+            txt={sections[index]}
+          />
         ))}
-      </ul>
+      </section>
+      <section className="tables">
+        <table>
+          {items.map((item) => (
+            <ListItem key={item.id} item={item} />
+          ))}
+        </table>
+      </section>
     </div>
   )
 }
