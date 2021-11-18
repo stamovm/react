@@ -13,10 +13,10 @@ code {
 }
 
 .buttons {
-  margin-top: 0;
+  top: 0;
   width: 100%;
   display: flex;
-  position: fixed;
+  position: sticky;
 }
 
 .btn {
@@ -35,5 +35,5 @@ td {
   border: 1px solid black;
 }
 .tables {
-  margin-top: 2rem;
+  margin-top: 0;
 }
