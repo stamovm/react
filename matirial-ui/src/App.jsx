@@ -11,19 +11,25 @@ import Toolbar from '@mui/material/Toolbar'
 import Container from '@mui/material/Container'
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
 import Button from '@mui/material/Button'
-import { makeStyles } from '@mui/styles'
+import { Box, ThemeProvider } from '@mui/system'
+import { createTheme } from '@mui/material/styles'
+import { green, teal } from '@mui/material/colors'
 
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: 'red',
-    color: (props) => props.color,
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: teal[500],
+    },
+    secondary: {
+      main: green[500],
+    },
   },
 })
 
 const App = () => {
   return (
-    <>
-      <CssBaseline />
+    <ThemeProvider theme={theme}>
+      {/* <CssBaseline /> */}
       <AppBar position="relative">
         <Toolbar>
           <PhotoCamera />
@@ -31,7 +37,7 @@ const App = () => {
         </Toolbar>
       </AppBar>
       <main>
-        <div className="main-div">
+        <Box className="main-div">
           <Container maxWidth="sm">
             <Typography
               variant="h2"
@@ -50,7 +56,7 @@ const App = () => {
               Hello everyone. This is a photo album. The perpose of this
               sentence here, is to be an example of a long sentence.
             </Typography>
-            <div>
+            <Box>
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
@@ -64,11 +70,11 @@ const App = () => {
                   </Button>
                 </Grid>
               </Grid>
-            </div>
+            </Box>
           </Container>
-        </div>
+        </Box>
       </main>
-    </>
+    </ThemeProvider>
   )
 }
 
