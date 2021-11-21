@@ -15,6 +15,7 @@ import { Box, ThemeProvider } from '@mui/system'
 import { createTheme } from '@mui/material/styles'
 import { green, teal } from '@mui/material/colors'
 
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const theme = createTheme({
   palette: {
     primary: {
@@ -29,7 +30,7 @@ const theme = createTheme({
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
           <PhotoCamera />
@@ -73,6 +74,32 @@ const App = () => {
             </Box>
           </Container>
         </Box>
+        <Container className="card-grid" maxWidth="md">
+          {cards.map((card) => (
+            <Grid item key={card}>
+              <Card className="card">
+                <CardMedia
+                  image="https://source.unsplash.com/random"
+                  title="Image Title"
+                />
+                <CardContent>
+                  <Typography variant="h6" color="textPrimary" gutterBottom>
+                    Card Heading
+                  </Typography>
+                  <Typography>This is a media card.</Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    View
+                  </Button>
+                  <Button size="small" color="primary">
+                    Edit
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Container>
       </main>
     </ThemeProvider>
   )
