@@ -11,11 +11,12 @@ import Toolbar from '@mui/material/Toolbar'
 import Container from '@mui/material/Container'
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
 import Button from '@mui/material/Button'
-import { Box, ThemeProvider } from '@mui/system'
-import { createTheme } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { green, teal } from '@mui/material/colors'
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 const theme = createTheme({
   palette: {
     primary: {
