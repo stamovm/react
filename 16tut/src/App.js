@@ -8,6 +8,7 @@ import About from './components/About'
 import Missing from './components/Missing'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { format } from 'date-fns'
 
 function App() {
   const [search, setSearch] = useState('')
@@ -15,6 +16,10 @@ function App() {
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate()
+
+  useEffect(() => {
+    //todo: time 5:43
+  }, [posts, search])
 
   const [posts, setPosts] = useState([
     {
@@ -39,7 +44,14 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // TODO 5:37
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1
+    const datetime = format(new Date(), 'MMMM dd', 'yyyy pp')
+    const newPost = { id, title: postTitle, datetime, body: postBody }
+    const allPosts = [...posts, newPost]
+    setPosts(allPosts)
+    setPostTitle('')
+    setPostBody('')
+    navigate('/')
   }
 
   const handleDelete = (id) => {
@@ -73,7 +85,7 @@ function App() {
           />
         </Route>
         <Route path="/about" element={<About />} />
-        {/* <Route path="/*" element={<Missing />} /> */}
+        <Route path="/*" element={<Missing />} />
       </Routes>
       <Footer />
     </div>
