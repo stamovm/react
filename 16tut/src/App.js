@@ -16,11 +16,7 @@ function App() {
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate()
-
-  useEffect(() => {
-    //todo: time 5:43
-  }, [posts, search])
-
+  //todo  5:46
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -41,6 +37,14 @@ function App() {
       body: 'This text is just here for testing purposes again.',
     },
   ])
+
+  useEffect(() => {
+    const filteredResults = posts.filter(
+      (post) =>
+        post.body.toLowerCase().includes(search.toLowerCase()) ||
+        post.title.toLocaleLowerCase().includes(search.toLowerCase())
+    )
+  }, [posts, search])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -65,7 +69,7 @@ function App() {
       <Header title="React JS Blog" />
       <Nav search={search} setSearch={setSearch} />
       <Routes>
-        <Route path="/" element={<Home posts={posts} />} />
+        <Route path="/" element={<Home posts={searchResults} />} />
         <Route
           path="/post"
           element={
