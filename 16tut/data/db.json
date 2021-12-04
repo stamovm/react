@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "first post",
+      "datetime": "July 01, 2021 11:17:36 AM",
+      "body": "This text is just here for testing purposes."
+    },
+    {
+      "id": 2,
+      "title": "second post",
+      "datetime": "July 02, 2021 11:17:36 AM",
+      "body": "This text is just here for testing purposes on the second post."
+    },
+    {
+      "id": 3,
+      "title": "another post",
+      "datetime": "July 03, 2021 11:17:36 AM",
+      "body": "This text is just here for testing purposes again."
+    }
+  ]
+}

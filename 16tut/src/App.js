@@ -9,6 +9,7 @@ import Missing from './components/Missing'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { format } from 'date-fns'
+import api from './api/posts'
 
 function App() {
   const [search, setSearch] = useState('')
@@ -16,27 +17,25 @@ function App() {
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const navigate = useNavigate()
-  //todo  5:46
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      title: 'first post',
-      datetime: 'July 01, 2021 11:17:36 AM',
-      body: 'This text is just here for testing purposes.',
-    },
-    {
-      id: 2,
-      title: 'second post',
-      datetime: 'July 02, 2021 11:17:36 AM',
-      body: 'This text is just here for testing purposes on the second post.',
-    },
-    {
-      id: 3,
-      title: 'another post',
-      datetime: 'July 03, 2021 11:17:36 AM',
-      body: 'This text is just here for testing purposes again.',
-    },
-  ])
+
+  const [posts, setPosts] = useState([])
+  //todo 6:15 npx json-server -p 3500 -w data/db.json
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/post')
+        setPosts(response.data)
+      } catch (err) {
+        if (err.response) {
+          console.error(err.response.data)
+          console.error(err.response.status)
+          console.error(err.response.headers)
+        } else {
+          console.log(`Error: ${err.message}`)
+        }
+      }
+    }
+  }, [])
 
   useEffect(() => {
     const filteredResults = posts.filter(
@@ -44,6 +43,7 @@ function App() {
         post.body.toLowerCase().includes(search.toLowerCase()) ||
         post.title.toLocaleLowerCase().includes(search.toLowerCase())
     )
+    setSearchResults(filteredResults.reverse())
   }, [posts, search])
 
   const handleSubmit = (e) => {
