@@ -17,6 +17,12 @@
       "title": "another post",
       "datetime": "July 03, 2021 11:17:36 AM",
       "body": "This text is just here for testing purposes again."
+    },
+    {
+      "id": 4,
+      "title": "Test post 1",
+      "datetime": "February 05",
+      "body": "This here is a test post number one!"
     }
   ]
 }
