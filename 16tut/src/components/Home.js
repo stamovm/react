@@ -1,16 +1,16 @@
 import Feed from './Feed'
 
-const Home = ({ posts }) => {
+const Home = ({ posts, fetchError, isLoading }) => {
   return (
     <main className="Home">
+      {/* {isLoading &&} */}
       {posts.length ? (
         <Feed posts={posts} />
       ) : (
         <p style={{ marginTop: '2rem' }}></p>
       )}
 
-      <details>Some details here.</details>
-      <meter value="25" min="1" max="100" />
+      <details>Number of posts: {posts.length}</details>
     </main>
   )
 }

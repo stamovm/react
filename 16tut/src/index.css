@@ -101,6 +101,7 @@ Nav ul {
 
 .Nav li {
   padding: 1rem;
+  transition: all 0.8s ease-out;
 }
 
 .Nav li:hover,
@@ -217,10 +218,24 @@ Nav ul {
   min-width: 48px;
   border-radius: 0.25rem;
   padding: 0.5rem;
+  margin-right: 0.5rem;
   font-size: 1rem;
-  background-color: red;
   color: #fff;
   cursor: pointer;
+  transition: all 0.8s ease-out;
+}
+
+.deleteButton {
+  background-color: #b00;
+}
+.deleteButton:hover {
+  background-color: #f00;
+}
+.editButton {
+  background-color: #333;
+}
+.editButton:hover {
+  background-color: #555;
 }
 
 .statusMsg {

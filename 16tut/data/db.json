@@ -2,9 +2,9 @@
   "posts": [
     {
       "id": 1,
-      "title": "first post",
-      "datetime": "July 01, 2021 11:17:36 AM",
-      "body": "This text is just here for testing purposes."
+      "title": "first post(edited)",
+      "datetime": "February 06",
+      "body": "This text is just here for testing purposes.\nEdit: first edit"
     },
     {
       "id": 2,
@@ -14,9 +14,9 @@
     },
     {
       "id": 3,
-      "title": "another post",
-      "datetime": "July 03, 2021 11:17:36 AM",
-      "body": "This text is just here for testing purposes again."
+      "title": "another post (edited)",
+      "datetime": "February 07",
+      "body": "This text is just here for testing purposes again.(edited)"
     },
     {
       "id": 4,

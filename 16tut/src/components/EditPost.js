@@ -1,17 +1,17 @@
-import previousTuesday from 'date-fns/fp/previousTuesday'
+// import previousTuesday from 'date-fns/fp/previousTuesday'
 import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 
-const EditPost = (
+const EditPost = ({
   posts,
   handleEdit,
   editBody,
   setEditBody,
   editTitle,
-  setEditTitle
-) => {
+  setEditTitle,
+}) => {
   const { id } = useParams()
-  console.log('🚀 ~ file: EditPost.js ~ line 14 ~ post', previousTuesday)
+  console.log('🚀 ~ file: EditPost.js ~ line 14 ~ post', posts)
   const post = posts.find((post) => post.id.toString() === id)
 
   useEffect(() => {
