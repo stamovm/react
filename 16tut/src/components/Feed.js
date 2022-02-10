@@ -6,6 +6,10 @@ const Feed = ({ posts }) => {
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
+      <details>
+        <summary>Info</summary>
+        Number of posts: {posts.length}
+      </details>
     </>
   )
 }

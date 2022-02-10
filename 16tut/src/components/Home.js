@@ -3,14 +3,19 @@ import Feed from './Feed'
 const Home = ({ posts, fetchError, isLoading }) => {
   return (
     <main className="Home">
-      {/* {isLoading &&} */}
-      {posts.length ? (
-        <Feed posts={posts} />
-      ) : (
-        <p style={{ marginTop: '2rem' }}></p>
+      {isLoading && <p className="statusMsg">Loading posts...</p>}
+      {!isLoading && fetchError && (
+        <p className="statusMsg" style={{ color: 'red' }}>
+          {fetchError}
+        </p>
       )}
-
-      <details>Number of posts: {posts.length}</details>
+      {!isLoading &&
+        !fetchError &&
+        (posts.length ? (
+          <Feed posts={posts} />
+        ) : (
+          <p className="statusMsg">No post yet...</p>
+        ))}
     </main>
   )
 }

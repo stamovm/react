@@ -13,6 +13,7 @@ import { format } from 'date-fns'
 import api from './api/posts'
 import useWindowSize from './hooks/useWindowSize'
 import useAxiosFetch from './hooks/useAxiosFetch'
+import DataContext from './context/DataContext'
 
 function App() {
   const [search, setSearch] = useState('')
@@ -28,28 +29,10 @@ function App() {
   const { data, fetchError, isLoading } = useAxiosFetch(
     'http://localhost:3500/posts'
   )
-  //todo 7:12 npx json-server -p 3500 -w data/db.json
+  //todo 7:17 npx json-server -p 3500 -w data/db.json
   useEffect(() => {
     setPosts(data)
   }, [data])
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     try {
-  //       const response = await api.get('/posts')
-  //       setPosts(response.data)
-  //     } catch (err) {
-  //       if (err.response) {
-  //         console.error(err.response.data)
-  //         console.error(err.response.status)
-  //         console.error(err.response.headers)
-  //       } else {
-  //         console.log(`Error: ${err.message}`)
-  //       }
-  //     }
-  //   }
-  //   fetchPosts()
-  // }, [])
 
   useEffect(() => {
     const filteredResults = posts.filter(
