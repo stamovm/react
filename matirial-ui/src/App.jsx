@@ -1,19 +1,16 @@
 import React from 'react'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
 import AppBar from '@mui/material/AppBar'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
 import CssBaseline from '@mui/material/CssBaseline'
+import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
+import Button from '@mui/material/Button'
 import Toolbar from '@mui/material/Toolbar'
 import Container from '@mui/material/Container'
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
-import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { green, teal } from '@mui/material/colors'
+import MyCard from './components/MyCard'
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -77,28 +74,7 @@ const App = () => {
         </Box>
         <Container className="card-grid" maxWidth="md">
           {cards.map((card) => (
-            <Grid item key={card}>
-              <Card className="card">
-                <CardMedia
-                  image="https://source.unsplash.com/random"
-                  title="Image Title"
-                />
-                <CardContent>
-                  <Typography variant="h6" color="textPrimary" gutterBottom>
-                    Card Heading
-                  </Typography>
-                  <Typography>This is a media card.</Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    View
-                  </Button>
-                  <Button size="small" color="primary">
-                    Edit
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
+            <MyCard card={card} />
           ))}
         </Container>
       </main>
