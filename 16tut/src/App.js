@@ -30,7 +30,7 @@ function App() {
   const { data, fetchError, isLoading } = useAxiosFetch(
     'http://localhost:3500/posts'
   )
-  //todo 7:24 npx json-server -p 3500 -w data/db.json
+  //todo 7:34 npx json-server -p 3500 -w data/db.json
   useEffect(() => {
     setPosts(data)
   }, [data])
@@ -91,31 +91,11 @@ function App() {
   return (
     <div className="App">
       <DataProvider>
-        <Header title="React JS Blog" width={width} />
-        <Nav search={search} setSearch={setSearch} />
+        <Header title="React JS Blog" />
+        <Nav />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                posts={searchResults}
-                fetchError={fetchError}
-                isLoading={isLoading}
-              />
-            }
-          />
-          <Route
-            path="/post"
-            element={
-              <NewPost
-                handleSubmit={handleSubmit}
-                postTitle={postTitle}
-                setPostTitle={setPostTitle}
-                postBody={postBody}
-                setPostBody={setPostBody}
-              />
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/post" element={<NewPost />} />
           <Route
             path="/edit/:id"
             element={
