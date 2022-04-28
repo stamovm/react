@@ -1,22 +1,10 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "first post(edited)",
-      "datetime": "February 06",
-      "body": "This text is just here for testing purposes.\nEdit: first edit"
-    },
-    {
       "id": 2,
-      "title": "second post",
-      "datetime": "July 02, 2021 11:17:36 AM",
+      "title": "second post (edited)",
+      "datetime": "April 27",
       "body": "This text is just here for testing purposes on the second post."
-    },
-    {
-      "id": 3,
-      "title": "another post (edited)",
-      "datetime": "February 07",
-      "body": "This text is just here for testing purposes again.(edited)"
     },
     {
       "id": 4,
@@ -27,26 +15,14 @@
     {
       "id": 5,
       "title": "new abc",
-      "datetime": "April 26",
+      "datetime": "April 27",
       "body": "abra cadabra"
     },
     {
-      "id": 6,
-      "title": "111111111111",
-      "datetime": "April 26",
-      "body": "2222222222222"
-    },
-    {
-      "id": 7,
-      "title": "zzzzzzzzzzzzzzzz 2",
-      "datetime": "April 26",
-      "body": "aaaaaaaaaaaaaaaaaa"
-    },
-    {
-      "id": 8,
-      "title": "post 55",
-      "datetime": "April 26",
-      "body": "just checking"
+      "id": 9,
+      "title": "test 21",
+      "datetime": "April 27",
+      "body": "21"
     }
   ]
 }
