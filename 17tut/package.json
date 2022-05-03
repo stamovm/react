@@ -1,11 +1,16 @@
 {
-  "name": "15tut",
+  "name": "16tut",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "axios": "^0.27.2",
+    "date-fns": "^2.28.0",
+    "easy-peasy": "^5.0.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

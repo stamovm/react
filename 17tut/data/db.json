@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "title": "Test post 1",
+      "datetime": "February 05",
+      "body": "This here is a test post number one!"
+    },
+    {
+      "id": 9,
+      "title": "test 21e2",
+      "datetime": "April 28",
+      "body": "21"
+    },
+    {
+      "id": 10,
+      "title": "new 2",
+      "datetime": "April 28",
+      "body": "new post"
+    }
+  ]
+}
