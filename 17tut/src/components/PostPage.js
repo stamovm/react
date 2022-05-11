@@ -9,7 +9,7 @@ const PostPage = () => {
   const post = getPostById(id)
   const navigate = useNavigate()
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     deletePost(id)
     navigate('/')
   }

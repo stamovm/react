@@ -12,9 +12,8 @@ import { useEffect } from 'react'
 import { useStoreActions } from 'easy-peasy'
 import useAxiosFetch from './hooks/useAxiosFetch'
 
+//to run the test server: > npx json-server -p 3500 -w data/db.json
 function App() {
-  //todo 8:17 npx json-server -p 3500 -w data/db.json
-
   const setPosts = useStoreActions((actions) => actions.setPosts)
   const { data, fetchError, isLoading } = useAxiosFetch(
     'http://localhost:3500/posts'
@@ -22,7 +21,7 @@ function App() {
 
   useEffect(() => {
     setPosts(data)
-  }, [data])
+  }, [data, setPosts])
 
   return (
     <div className="App">
