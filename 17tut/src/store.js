@@ -19,14 +19,18 @@ export default createStore({
     state.editTitle = payload
   }),
   editBody: '',
-  setsEditBody: action((state, payload) => {
+  setEditBody: action((state, payload) => {
     state.editBody = payload
   }),
+  search: '',
+  setSearch: action((state, payload) => {
+    state.search = payload
+  }),
   searchResults: [],
-  setsearchResults: action((state, payload) => {
+  setSearchResults: action((state, payload) => {
     state.searchResults = payload
   }),
-  postCount: computed((state) => state.post.length),
+  postCount: computed((state) => state.posts.length),
   getPostById: computed((state) => {
     return (id) => state.posts.find((post) => post.id.toString() === id)
   }),
@@ -37,8 +41,8 @@ export default createStore({
       actions.setPosts([...posts, response.data])
       actions.setPostTitle('')
       actions.setPostBody('')
-    } catch (error) {
-      console.log(error.message)
+    } catch (err) {
+      console.log(`Error: ${err.message}`)
     }
   }),
   deletePost: thunk(async (actions, id, helpers) => {
